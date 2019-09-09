@@ -62,26 +62,6 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: #085551;
 }
-body tr {
-  width: 18%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid #8ca8a7;
-  width: 95%;
-  margin: 0 auto;
-  height: 40px;
-  text-align: left;
-  padding-top: 16px;
-}
-body a {
-  text-decoration: none;
-  cursor: pointer;
-  color: #329e11;
-}
-body a:hover {
-  color: #032c2a;
-}
 body .container {
   margin: 0 auto;
   width: 80%;
@@ -142,31 +122,54 @@ body .container .table {
   background-color: whitesmoke;
   width: 100%;
 }
-body .container .table .requireFields {
+body .container .table tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 18%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid #8ca8a7;
   width: 95%;
   margin: 0 auto;
-  padding-bottom: 8px;
-  width: 100%;
+  height: 40px;
+  margin-top: 16px;
+  width: 90%;
+}
+body .container .table th {
+  text-align: left;
   font-weight: bold;
-  font-size: 20px;
-  height: 80px;
+  width: 19%;
+  margin: 0 1%;
+}
+body .container .table th .checkbox {
+  margin-right: 16px;
+}
+body .container .table th .contentIcons {
   text-align: center;
 }
-body .container .table .requireFields th {
-  width: 18%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+body .container .table td {
+  text-align: left;
   font-weight: bold;
-  font-size: 20px;
+  width: 19%;
+  margin: 0 1%;
+  font-weight: normal;
+  font-size: 14px;
+}
+body .container .table td .contentIcons {
+  text-align: center;
+}
+body .container .table td .checkbox {
+  margin-right: 16px;
+}
+body .container .table td a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #329e11;
+}
+body .container .table td a:hover {
+  color: #032c2a;
 }
 
 /*# sourceMappingURL=styles.css.map */
