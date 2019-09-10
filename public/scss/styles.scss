@@ -43,12 +43,15 @@ body{
     margin-top: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:rgb(8, 85, 81);
-    
+        .content{
+            position:relative;
+        }
     
     
         .container{
             margin: 0 auto;
             width: 80%;
+           
                     .headerTable{
                             font-size: 16px;
                              width: 100%;
@@ -72,7 +75,7 @@ body{
                                         background-color: rgb(11, 155, 47);
                                         color: rgb(183, 240, 237);
                                         height: 48px;
-                                        margin: 16px 4%;
+                                        margin: 16px 5%;
                                         font-weight: 400;
                                         &:hover{
                                             background-color:rgb(80, 206, 42);
@@ -150,5 +153,77 @@ body{
                                             
 
                                 }
-                    }
+                                .modal{
+                                    width: 28%;
+                                    min-width:230px;
+                                    height: 500px;
+                                    background-color: rgb(184, 221, 169);
+                                    margin:24px 36%;
+                                    position: absolute;
+                                    display:none;
+                                    .title{
+                                        @include childFlex;
+                                           width: 100%;
+                                           height: 80px;
+                                           background-color:rgb(109, 204, 125); 
+                                               h2{
+                                                 font-size:32px;
+                                                 margin:24px;
+                                                }
+                                                a{
+                                                  @include a;
+                                                  color: 1px rgb(3, 31, 29);
+                                                  font-size: 20px;
+                                                  margin:4px;
+                                                    }
+                                                }
+                                  .input-group{
+                                    display:flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                    justify-content: center; 
+                                    width: 90%;
+                                    margin:24px;
+                                        .label{
+                                            font-size: 16px;
+                                            font-weight: 800;
+                                            margin-bottom: 4px;
+
+                                        }
+                                        input{
+                                            height: 32px;
+                                            color: rgb(3, 44, 42);
+                                            border:none;
+
+                                        }
+                                }
+                                .contentBtn{
+                                    width: 100%;
+                                    @include childFlex;
+                                    justify-content: space-around;
+                                    margin-top:60px;
+                                }
+                                .btnModal{
+                                        width: 100px; 
+                                        background-color: rgb(11, 155, 47);
+                                        color: rgb(183, 240, 237);
+                                        height: 32px;
+                                        font-weight: 400;
+                                        font-size: 16px;
+                                        &:hover{
+                                            background-color:rgb(80, 206, 42);
+                                            color:rgb(3, 44, 42);
+                                            transition:all 0.3s ease;
+                                        } 
+                                }
+
+                            }
+                            
+                                
+                                    
+                                          
+     
+}
+                            
         
