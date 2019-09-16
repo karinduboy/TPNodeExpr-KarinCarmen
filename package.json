@@ -6,16 +6,8 @@
   "scripts": {
     "crazy": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/karinduboy/TPNodeExpr-KarinCarmen.git"
-  },
   "author": "Karin y Carmen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/karinduboy/TPNodeExpr-KarinCarmen/issues"
-  },
-  "homepage": "https://github.com/karinduboy/TPNodeExpr-KarinCarmen#readme",
   "dependencies": {
     "body-parser": "1.19.0",
     "cors": "2.8.5",
