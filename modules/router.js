@@ -8,13 +8,14 @@ const users = require('./users')
 const router = express.Router(); //asigno la funcionalidad que necesito
 
 
-router.get ('/', (req,res) =>{
+router.get('/', (req,res) =>{
     res.sendFile(path.join(__dirname, '../pages/index.html'));
 });
 
 
 //APIS
-router.get('/api/users', users);
+router.get('/api/users', users.getUsers);
+// router.get('api/users/:query', users.searchByQuery)
 
 //ERRORS
 router.use((req,res)=>{

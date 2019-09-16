@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/users.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 </head>
-<body>
+<body onload="initialize()">
     <div id="content">
         
     </div>
@@ -24,15 +25,16 @@
                 <table class="table">
                     <thead>
                         <tr class="requiredFields">
-                            <th><input type="checkbox" value="ok" class="checkbox">Name</th>
+                            <th><input type="checkbox" value="ok" class="checkbox"></th>
+                            <th>Name</th>
                             <th>Email</th>
                             <th>Address</th>
                             <th>Phone</th>
                             <th class="contentIcons">Actions</th>
                         </tr>
                     </thead>
-                    <tbody id="tbody" class="elements">
-                        <tr class="employee">
+                    <tbody id="usersTable" class="elements">
+                        <!-- <tr class="employee">
                             <td><input type="checkbox" value="ok" class="checkbox">carmen</td>
                             <td>mindeguia84@gmail.com</td>
                             <td>25 de Mayo 1694</td>
@@ -41,7 +43,7 @@
                             <a href="#"><i class="material-icons" id="Edit">&#xE254;</i></a>
                             <a href="#"><i class="material-icons" id="Delete">&#xE872;</i></a>
                             </td>
-                        </tr>
+                        </tr> -->
                      </tbody>
                 </table>
             </div>
