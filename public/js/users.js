@@ -29,6 +29,12 @@ const searchUsersByQuery = () => {
     
 };
 
+const createUser = () => {
+    
+
+};
+
+
 //con esta funcion hacemos la carga inicial de los usuarios en el home
 const initialize = async () => {
     usersData = await getUsers();

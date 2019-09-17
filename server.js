@@ -15,11 +15,9 @@ server.use(
 	})
 );
 server.use(bodyParser.json());
-
-//comienzo a definir la funcionalidad de mi servidor
-server.use(router); 
 server.use(express.static('public'));
 server.use(logger('dev'));
+server.use(router); 
 server.use(cors);
 
 server.listen(port, () =>{

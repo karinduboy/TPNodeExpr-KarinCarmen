@@ -14,3 +14,14 @@ const closeModal = ()=>{
     const modal =  document.getElementById("modalContainer");
     modal.style.display="none";
 };
+
+const validateForm = () => {
+    let inputName = document.getElementById('name');
+    let inputEmail = document.getElementById('email');
+    let inputAddress = document.getElementById('address');
+    let inputPhone = document.getElementById('phone');
+    let isValid = false;
+
+    // if (inputName && inputName.)
+
+}

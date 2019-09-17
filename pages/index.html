@@ -25,7 +25,7 @@
                 <table class="table">
                     <thead>
                         <tr class="requiredFields">
-                            <th><input type="checkbox" value="ok" class="checkbox"></th>
+                            <!-- <th><input type="checkbox" value="ok" class="checkbox"></th> -->
                             <th>Name</th>
                             <th>Email</th>
                             <th>Address</th>
@@ -49,30 +49,39 @@
             </div>
             <div id= "modalContainer" class="modal">
                     <div class="title">
-                            <h2>Add Employee</h2>
+                            <h2>Agregar Empleado</h2>
                             <a href="#"id="close"class="close"onclick="closeModal()">x</a>
                         </div>
                         <div>
-                        <form action="#">
+                        <form action="#" id="userDataForm">
                         <div class="input-group">
-                            <label class="label" for="nombre">Name:</label>
-                            <input type="text" id="name" placeholder=" Enter your name...">
+                            <label class="label" for="name">Nombre:</label>
+                            <input type="text" id="name" placeholder="Nombre..." required minlength="2" maxlength="30">
+                            <div id="nameError"></div>
                         </div>
                         <div class="input-group">
-                            <label class="label" for="correo">Email:</label>
-                            <input type="email" id="email"placeholder=" Enter your email...">
+                            <label class="label" for="lastName">Apellido:</label>
+                            <input type="text" id="lastName" placeholder="Apellido..." required minlength="2" maxlength="30">
+                            <div id="lastNameError"></div>
                         </div>
                         <div class="input-group">
-                            <label class="label" for="address">Address:</label>
-                            <input type="address" id="address"placeholder=" Enter your address...">
+                            <label class="label" for="email">Email:</label>
+                            <input type="email" id="email" placeholder="Email..." required >
+                            <div id="emailError"></div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label" for="address">Dirección:</label>
+                            <input type="address" id="address" placeholder="Dirección..." required>
+                            <div id="addressError"></div>
                         </div>
                         <div class="input-group">
                             <label class="label" for="phone">Phone:</label>
-                            <input type="number" id="phone" placeholder=" Enter your Phone...">
+                            <input type="number" id="phone" placeholder="Teléfono..." required>
+                            <div id="phoneError"></div>
                         </div>
                         <div class="contentBtn">
-                           <input type="submit" id="btn-submit" value="submit"class="btnModal">
-                           <input type="button" id="btn-delete" value="delete"class="btnModal">
+                           <input type="submit" id="btn-add" value="Agregar"class="btnModal">
+                           <input type="button" id="btn-cancel" value="Cancelar"class="btnModal">
                         </div>
                     </form>
                 </div>
