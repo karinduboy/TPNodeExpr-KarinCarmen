@@ -48,40 +48,35 @@
                 </table>
             </div>
             <div id= "modalContainer" class="modal">
-                    <div class="title">
-                            <h2>Agregar Empleado</h2>
-                            <a href="#"id="close"class="close"onclick="closeModal()">x</a>
-                        </div>
-                        <div>
-                        <form action="#" id="userDataForm">
-                        <div class="input-group">
+                <div class="title">
+                    <h2>Agregar Empleado</h2>
+                    <a href="#"id="close"class="close"onclick="closeModal()">x</a>
+                </div>
+                <div>
+                    <form action="#" id="userDataForm">
+                        <div class="inputGroup">
                             <label class="label" for="name">Nombre:</label>
-                            <input type="text" id="name" placeholder="Nombre..." required minlength="2" maxlength="30">
+                            <input type="text" id="name" placeholder="Nombre..." required minlength="2" maxlength="30" title="El nombre debe tener entre 2 y 30 caracteres" >
                             <div id="nameError"></div>
                         </div>
-                        <div class="input-group">
-                            <label class="label" for="lastName">Apellido:</label>
-                            <input type="text" id="lastName" placeholder="Apellido..." required minlength="2" maxlength="30">
-                            <div id="lastNameError"></div>
-                        </div>
-                        <div class="input-group">
+                        <div class="inputGroup">
                             <label class="label" for="email">Email:</label>
                             <input type="email" id="email" placeholder="Email..." required >
                             <div id="emailError"></div>
                         </div>
-                        <div class="input-group">
+                        <div class="inputGroup">
                             <label class="label" for="address">Dirección:</label>
                             <input type="address" id="address" placeholder="Dirección..." required>
                             <div id="addressError"></div>
                         </div>
-                        <div class="input-group">
+                        <div class="inputGroup">
                             <label class="label" for="phone">Phone:</label>
                             <input type="number" id="phone" placeholder="Teléfono..." required>
                             <div id="phoneError"></div>
                         </div>
                         <div class="contentBtn">
-                           <input type="submit" id="btn-add" value="Agregar"class="btnModal">
-                           <input type="button" id="btn-cancel" value="Cancelar"class="btnModal">
+                        <input type="submit" id="btn-add" value="Agregar"class="btnModal">
+                        <input type="button" id="btn-cancel" value="Cancelar"class="btnModal">
                         </div>
                     </form>
                 </div>

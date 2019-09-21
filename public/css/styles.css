@@ -272,7 +272,7 @@ body .modal .title a:hover {
   color: #032c2a;
 }
 
-body .modal .input-group {
+body .modal .inputGroup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -291,13 +291,13 @@ body .modal .input-group {
   margin: 24px;
 }
 
-body .modal .input-group .label {
+body .modal .inputGroup .label {
   font-size: 16px;
   font-weight: 800;
   margin-bottom: 4px;
 }
 
-body .modal .input-group input {
+body .modal .inputGroup input {
   height: 32px;
   color: #032c2a;
   border: none;

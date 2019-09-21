@@ -25,7 +25,7 @@ const postUser = (req, res, next) => {
 
 const searchByQuery = (req,res,next) => {
     let query = req.params.query;
-    let searchedUsers = (users, query) => { users.filter(user => use.keys(users).some( key => user[key].includes(query)))};
+    let searchedUsers = (users, query) => { users.filter(user => user.keys(users).some( key => user[key].includes(query)))};
     if (searchedUsers) {
     res.send(searchedUsers);
     } else {

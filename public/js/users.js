@@ -7,7 +7,6 @@ const getUsers = () => {
 
 const userView = ({ id, name, email, address, phone }) => `
     <tr id="${id}" class="employee">
-        <td><input type="checkbox" value="ok" class="checkbox"></td>
         <td>${name}</td>
         <td>${email}</td>
         <td>${address}</td>
