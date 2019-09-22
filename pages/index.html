@@ -25,7 +25,6 @@
                 <table class="table">
                     <thead>
                         <tr class="requiredFields">
-                            <!-- <th><input type="checkbox" value="ok" class="checkbox"></th> -->
                             <th>Name</th>
                             <th>Email</th>
                             <th>Address</th>
@@ -34,22 +33,13 @@
                         </tr>
                     </thead>
                     <tbody id="usersTable" class="elements">
-                        <!-- <tr class="employee">
-                            <td><input type="checkbox" value="ok" class="checkbox">carmen</td>
-                            <td>mindeguia84@gmail.com</td>
-                            <td>25 de Mayo 1694</td>
-                            <td>2323 640682</td>
-                            <td class="contentIcons">
-                            <a href="#"><i class="material-icons" id="Edit">&#xE254;</i></a>
-                            <a href="#"><i class="material-icons" id="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr> -->
+                        
                      </tbody>
                 </table>
             </div>
             <div id= "modalContainer" class="modal">
                 <div class="title">
-                    <h2>Agregar Empleado</h2>
+                    <h2 id="title">Agregar Empleado</h2>
                     <a href="#"id="close"class="close"onclick="closeModal()">x</a>
                 </div>
                 <div>
@@ -75,7 +65,7 @@
                             <div id="phoneError"></div>
                         </div>
                         <div class="contentBtn">
-                        <input type="submit" id="btn-add" value="Agregar"class="btnModal">
+                        <input type="submit" id="btn-add" value="Agregar"class="btnModal"onclick="createUser()">
                         <input type="button" id="btn-cancel" value="Cancelar"class="btnModal">
                         </div>
                     </form>

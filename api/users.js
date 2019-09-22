@@ -31,6 +31,26 @@ const searchByQuery = (req,res,next) => {
     } else {
         res.status('404').json(`No encontramos ningún usuario con "${query}"`)
     };
+    next();
 }
 
-module.exports = { getUsers, postUser, searchByQuery };
+const patchUser = (req,res,next) => {
+    let newUser = req.body;
+    let oldUser = users.find(e=> e,id === req.body.id);
+    let editUser = {...oldUser,...newUser};
+    users.splice(oldUser, 1);
+    users.push(editUser);
+    res.json(`Se edito con exito el usuario con el id ${req.params.id}`)
+    next();
+}
+
+const deleteUser = (req, res, next) =>{
+    let userId = users.find(e=>e.id === req.params.id);
+    users.splice(userId, 1);
+    res.json(`Se elimino con exito el usuario con el id ${req.params.id}`);
+    next();
+}
+
+
+
+module.exports = { getUsers, postUser, searchByQuery, patchUser, deleteUser };
