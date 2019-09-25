@@ -19,7 +19,6 @@ server.use(express.static('public'));
 server.use(logger('dev'));
 server.use(router); 
 server.use(cors);
-
 server.listen(port, () =>{
     console.log(`escuchando desdel el puerto:${port}`) //esto lo hago como prueba para que me muestre que está corriendo el server
 });

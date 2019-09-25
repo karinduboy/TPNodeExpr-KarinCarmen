@@ -38,20 +38,20 @@ const createUser = () => {
     const formPhone = document.getElementById('phone');
     
 
-	const user = {
+	const payload  = {
         name: formName.value,
         email: formEmail.value,
         address: formAddress.value,
         phone: formPhone.value
 	};
 
-	if (isValid(user)) {
+	if (isValid(payload)) {
 		fetch('/api/users', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify(user)
+			body: JSON.stringify(payload)
 		})
 			.then((res) => res.json())
 			.then((res) => {
@@ -72,7 +72,7 @@ const createUser = () => {
     location.reload(); //éste método hace que la página se actualice luego de enviar la info y se vea automáticamente el nuevo usuario, sino hay que refrescar la página manualmente.
 };
 
-const isValid = (user) => {
+const isValid = (payload) => {
 	//acá valido las cositas
 	return true;
 };
