@@ -65,7 +65,7 @@ body {
   width: 100%;
   margin-top: 40px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #085551;
+  color: #042725;
 }
 
 body .content {
@@ -92,7 +92,7 @@ body .container .headerTable {
 }
 
 body .container .headerTable h2 {
-  color: #d8ece6;
+  color: #b7f0ed;
   width: 60%;
   padding: 24px;
   font-size: 32px;
@@ -133,10 +133,17 @@ body .container .headerTable .button:hover {
 body .container .headerTable .button .more {
   margin: 8px;
   border-radius: 50%;
-  background-color: #b8d8d3;
-  color: #329e11;
+  background-color: #b7f0ed;
+  color: #0b9b2f;
   padding: 0 4px;
   font-weight: bold;
+}
+
+body .container .headerTable .button .more:hover {
+  background-color: #50ce2a;
+  color: #032c2a;
+  -webkit-transition-delay: 8ms;
+          transition-delay: 8ms;
 }
 
 body .container .searchFather {
@@ -263,7 +270,7 @@ body .modal .title a {
   text-decoration: none;
   cursor: pointer;
   color: #329e11;
-  color: 1px #031f1d;
+  color: 1px #042725;
   font-size: 20px;
   margin: 4px;
 }
@@ -299,8 +306,21 @@ body .modal .inputGroup .label {
 
 body .modal .inputGroup input {
   height: 32px;
-  color: #032c2a;
+  color: #042725;
   border: none;
+}
+
+body .modal .inputGroup input .valid {
+  color: #3c3c3c;
+  font-family: principal;
+  font-size: 18px;
+  line-height: 22px;
+  background-color: #fbfbfb;
+  padding: 13px 13px 13px 54px;
+  margin-bottom: 10px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body .modal .contentBtn {

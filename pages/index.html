@@ -46,7 +46,7 @@
                     <form action="#" id="userDataForm">
                         <div class="inputGroup">
                             <label class="label" for="name">Nombre:</label>
-                            <input type="text" id="name" placeholder="Nombre..." required minlength="2" maxlength="30" title="El nombre debe tener entre 2 y 30 caracteres" >
+                            <input type="text" id="name" placeholder="Nombre..." required  minlength="2" maxlength="30" title="El nombre debe tener entre 2 y 30 caracteres" onblur="checkName(this)" onkeyup="checkName(this)">
                             <div id="nameError"></div>
                         </div>
                         <div class="inputGroup">

@@ -56,12 +56,9 @@ const createUser = () => {
 			.then((res) => res.json())
 			.then((res) => {
                 formName.value = '';
-                formLastName.value = '';
                 formEmail.value = '';
                 formAddress.value = '';
                 formPhone.value = '';
-                
-
 			})
 			.catch((error) => {
 				// acá van otras cositas
@@ -73,7 +70,7 @@ const createUser = () => {
 };
 
 const isValid = (payload) => {
-	//acá valido las cositas
+	
 	return true;
 };
 
