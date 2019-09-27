@@ -46,26 +46,26 @@
                     <form action="#" id="userDataForm">
                         <div class="inputGroup">
                             <label class="label" for="name">Nombre:</label>
-                            <input type="text" id="name" placeholder="Nombre..." required  minlength="2" maxlength="30" title="El nombre debe tener entre 2 y 30 caracteres" onblur="checkName(this)" onkeyup="checkName(this)">
-                            <div id="nameError"></div>
+                            <input type="text" id="name" placeholder="Nombre..." required  minlength="2" maxlength="30" title="El nombre debe tener entre 2 y 30 caracteres" onblur="checkInputLenght(this,2,30)" onkeyup="checkInputLenght(this,2,30)">
+                            <div id="nameError" class="valid"></div>
                         </div>
                         <div class="inputGroup">
                             <label class="label" for="email">Email:</label>
-                            <input type="email" id="email" placeholder="Email..." required >
-                            <div id="emailError"></div>
+                            <input type="email" id="email" placeholder="Email..." required onblur="checkEmail(this)" onkeyup="checkEmail(this)">
+                            <div id="emailError" class="valid"></div>
                         </div>
                         <div class="inputGroup">
                             <label class="label" for="address">Dirección:</label>
-                            <input type="address" id="address" placeholder="Dirección..." required>
-                            <div id="addressError"></div>
+                            <input type="address" id="address" placeholder="Dirección..." required onblur="checkInputLenght(this,2,30)" onkeyup="checkInputLenght(this,2,30)">
+                            <div id="addressError" class="valid"></div>
                         </div>
                         <div class="inputGroup">
                             <label class="label" for="phone">Phone:</label>
-                            <input type="number" id="phone" placeholder="Teléfono..." required>
-                            <div id="phoneError"></div>
+                            <input type="number" id="phone" placeholder="Teléfono..." required onblur="checkPhone(this)" onkeypress="checkPhone(this)">
+                            <div id="phoneError" class="valid"></div>
                         </div>
                         <div class="contentBtn">
-                        <input type="submit" id="btn-add" value="Agregar"class="btnModal"onclick="createUser()">
+                        <input type="submit" id="btn-add" value="Agregar"class="btnModal" onclick="createUser()">
                         <input type="button" id="btn-cancel" value="Cancelar"class="btnModal">
                         </div>
                     </form>
