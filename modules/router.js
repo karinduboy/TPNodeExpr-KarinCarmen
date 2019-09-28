@@ -13,10 +13,11 @@ router.get('/', (req,res) =>{
 
 //APIS
 router.get('/api/users', users.getUsers);
-router.get('/api/users', users.searchByQuery);
+router.get('/api/users/:id', users.getUserById);
+router.get('/api/users/:query', users.searchByQuery);
 router.post('/api/users', users.postUser);
 router.patch('/api/users', users.patchUser);
-router.delete('/api/users', users.deleteUser);
+router.delete('/api/users/:id', users.deleteUser);
 
 
 //ERRORS

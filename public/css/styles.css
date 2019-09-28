@@ -39,7 +39,7 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -55,66 +55,41 @@ a {
 body {
   font-size: 16px;
   background-color: #d8ece6;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   margin-top: 40px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: #085551;
 }
-
 body .content {
   position: relative;
 }
-
 body .container {
   margin: 0 auto;
   width: 80%;
 }
-
 body .container .headerTable {
   font-size: 16px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   background-color: #032c2a;
   height: 80px;
 }
-
 body .container .headerTable h2 {
   color: #d8ece6;
   width: 60%;
   padding: 24px;
-  font-size: 32px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  font-size: 28px;
+  font-style: italic;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
-
 body .container .headerTable .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 25%;
   background-color: #0b9b2f;
   color: #b7f0ed;
@@ -122,14 +97,11 @@ body .container .headerTable .button {
   margin: 16px 5%;
   font-weight: 400;
 }
-
 body .container .headerTable .button:hover {
   background-color: #50ce2a;
   color: #032c2a;
-  -webkit-transition-delay: 8ms;
-          transition-delay: 8ms;
+  transition-delay: 8ms;
 }
-
 body .container .headerTable .button .more {
   margin: 8px;
   border-radius: 50%;
@@ -138,96 +110,71 @@ body .container .headerTable .button .more {
   padding: 0 4px;
   font-weight: bold;
 }
-
 body .container .searchFather {
   width: 100%;
   background-color: whitesmoke;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  flex-direction: row-reverse;
   height: 80px;
 }
-
 body .container .searchFather .search {
   width: 35%;
   height: 40px;
   margin: 16px;
 }
-
 body .container .table {
   background-color: whitesmoke;
   width: 100%;
 }
-
 body .container .table tr {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 18%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
   border-bottom: 1px solid #8ca8a7;
   width: 95%;
   margin: 0 auto;
   height: 40px;
   margin-top: 16px;
-  width: 90%;
+  width: 98%;
 }
-
 body .container .table th {
   text-align: left;
   font-weight: bold;
   width: 19%;
   margin: 0 1%;
+  overflow: hidden;
 }
-
 body .container .table th .checkbox {
   margin-right: 16px;
 }
-
 body .container .table th .contentIcons {
   text-align: center;
 }
-
 body .container .table td {
   text-align: left;
   font-weight: bold;
   width: 19%;
   margin: 0 1%;
+  overflow: hidden;
   font-weight: normal;
   font-size: 14px;
 }
-
 body .container .table td .contentIcons {
-  text-align: center;
+  text-align: right;
 }
-
-body .container .table td .checkbox {
-  margin-right: 16px;
-}
-
 body .container .table td a {
   text-decoration: none;
   cursor: pointer;
   color: #329e11;
 }
-
 body .container .table td a:hover {
   color: #032c2a;
 }
-
 body .modal {
   width: 28%;
   min-width: 230px;
@@ -237,28 +184,18 @@ body .modal {
   position: absolute;
   display: none;
 }
-
 body .modal .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
   height: 80px;
   background-color: #6dcc7d;
 }
-
 body .modal .title h2 {
   font-size: 32px;
   margin: 24px;
 }
-
 body .modal .title a {
   text-decoration: none;
   cursor: pointer;
@@ -267,59 +204,36 @@ body .modal .title a {
   font-size: 20px;
   margin: 4px;
 }
-
 body .modal .title a:hover {
   color: #032c2a;
 }
-
 body .modal .inputGroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   justify-content: center;
   width: 90%;
   margin: 24px;
 }
-
 body .modal .inputGroup .label {
   font-size: 16px;
   font-weight: 800;
   margin-bottom: 4px;
 }
-
 body .modal .inputGroup input {
   height: 32px;
   color: #032c2a;
   border: none;
 }
-
 body .modal .contentBtn {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 60px;
 }
-
 body .modal .btnModal {
   width: 100px;
   background-color: #0b9b2f;
@@ -328,11 +242,72 @@ body .modal .btnModal {
   font-weight: 400;
   font-size: 16px;
 }
-
 body .modal .btnModal:hover {
   background-color: #50ce2a;
   color: #032c2a;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+body .modalDelete {
+  width: 30%;
+  height: 240px;
+  position: absolute;
+  margin: 24px 35%;
+  background-color: #83ee9e;
+  display: none;
+  
+}
+body .modalDelete .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  background-color: #6dcc7d;
+}
+body .modalDelete .title h2 {
+  font-size: 32px;
+  margin: 24px;
+}
+body .modalDelete .title a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #329e11;
+  color: 1px #031f1d;
+  font-size: 20px;
+  margin: 4px;
+}
+body .modalDelete .title a:hover {
+  color: #032c2a;
+}
+body .modalDelete .message {
+  width: 100%;
+  height: 80px;
+  text-align: center;
+}
+body .modalDelete .message p {
+  padding-top: 16px;
+  font-size: 18px;
+}
+body .modalDelete .buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+body .modalDelete .btnModal {
+  width: 100px;
+  background-color: #0b9b2f;
+  color: #b7f0ed;
+  height: 32px;
+  font-weight: 400;
+  font-size: 16px;
+}
+body .modalDelete .btnModal:hover {
+  background-color: #50ce2a;
+  color: #032c2a;
+  transition: all 0.3s ease;
+}
+
 /*# sourceMappingURL=styles.css.map */
