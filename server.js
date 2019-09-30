@@ -10,10 +10,11 @@ const server = express();
 const port = 3000; //defino el puerto donde quiero ejecutar el servidor
 
 server.use(
-	bodyParser.urlencoded({
+	bodyParser.urlencoded({ 
 		extended: true
 	})
 );
+
 server.use(bodyParser.json());
 server.use(express.static('public'));
 server.use(logger('dev'));

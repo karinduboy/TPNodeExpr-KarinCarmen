@@ -2,6 +2,8 @@
 
 let usersData;
 
+
+
 const getUsers = () => {
     return fetch('/api/users').then((res) => res.json());
 };
@@ -14,8 +16,8 @@ const userView = ({ id, name, email, address, phone }) => `
         <td>${address}</td>
         <td>${phone}</td>
         <td class="contentIcons">
-        <a href="#"onclick="modalChange()"><i class="material-icons" id="Edit">&#xE254;</i></a>
-        <a href="#"><i class="material-icons" id="Delete">&#xE872;</i></a>
+        <a href="#"onclick="modalChange()"id="${id}"><i class="material-icons" >&#xE254;</i></a>
+        <a href="#" id="${id}" onclick="openModalDelete(this.id)" ><i class="material-icons">&#xE872;</i></a>
         </td>
     </tr>
 `;
@@ -74,18 +76,92 @@ const isValid = (payload) => {
 	return true;
 };
 
-const openModal = ()=>{
-    // const container = document.getElementById("container");
-    // container.style.display="none";
-    const modal =  document.getElementById("modalWrapper");
+//const patchExample = (id, payload) => {
+//	fetch(`api/users/${id}`, {
+	//	method: 'PATCH',
+	//	headers: {
+	//		'Content-Type': 'application/json'
+	//	},
+	//	body: JSON.stringify(payload)
+	//})
+	//	.then((res) => res.json())
+	//	.then((res) => {
+	//		console.log(res);
+	//		formName.value = '';
+     //       formEmail.value = '';
+      //      formAddress.value = '';
+       //     formPhone.value = '';
+		//	initialize();
+		//})
+		//.catch((error) => {
+			// acá van otras cositas
+	//	});
+//};
+
+const searchByQuery= () =>{
+  let query = document.getElementById("search").value;
+    if ( event.keyCode===13){
+        fetch(`/api/users/${query}`)
+        .then((res) => res.json())
+        .then(res=> printUsers(res))  
+    }  
+}
+
+const clean = () =>{
+    const tbody = document.getElementById('usersTable')
+    tbody.innerHTML = ''
+}
+// datos del modal	
+const modalValues = () => {	
+    const name = document.getElementById('name');	
+    const email = document.getElementById('email');	
+    const adress = document.getElementById('adress');	
+    const phone = document.getElementById('phone');	
+    let info = {	
+        'name': name.value,	
+        'email': email.value,	
+        'adress': adress.value,	
+        'phone': phone.value	
+    };	
+    console.log(info);
+}
+
+const openModalDelete = (id)=>{
+    const container = document.getElementById('container');
+    container.style.display='none';
+    const modal =  document.getElementById('modalDelete');
     modal.style.display="block";
+    const btnDelete = document.getElementById("btn-delete");
+    btnDelete.onclick= () =>deleteUser(id);
+   }
+
+const deleteUser=(id)=>{ 
+    fetch(`/api/users/${id}`, {
+        method: 'DELETE',
+        headers: {'Content-Type': 'application/json'},
+    })
+        .then(res=>res.json())
+        .then(res=>{
+            console.log(res);
+        })
+     closeDelete();   
+}
+
+const closeDelete=()=>{
+    const container = document.getElementById('container');
+    container.style.display='block';
+    const modal =  document.getElementById('modalDelete');
+    modal.style.display="none" 
+    location.reload();
+}
 
 
+const openModal = ()=>{
+    const modal =  document.getElementById('modalWrapper');
+    modal.style.display='block';
 };
 
 const closeModal = ()=>{
-    // const container = document.getElementById("container");
-    // container.style.display="block";
     const modal =  document.getElementById("modalWrapper");
     modal.style.display="none";
 };

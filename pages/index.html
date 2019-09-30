@@ -16,20 +16,20 @@
     </div>
     <div id="container" class="container">
             <header class="headerTable">
-                <h2> Manage Employees</h2>
-                <a href="#"onclick="openModal()" class="button" id="buttonAdd"><span class="more">+</span> Add New Employee</a>
+                <h2>REGISTRO DE USUARIOS</h2>
+                <a href="#"onclick="openModal()" class="button" id="buttonAdd"><span class="more">+</span>NUEVO USUARIO</a>
             </header>
             <div class="searchFather">
-                <input type="search" placeholder= "Filter..." id="search" class="search">
+                <input type="search" placeholder= "Filter..." id="search" class="search" onkeypress="searchByQuery()">
             </div>
                 <table class="table">
                     <thead>
                         <tr class="requiredFields">
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>Phone</th>
-                            <th class="contentIcons">Actions</th>
+                            <th>Nombre</th>
+                            <th>Correo Electrónico</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                            <th class="contentIcons">Cambios</th>
                         </tr>
                     </thead>
                     <tbody id="usersTable" class="elements">
@@ -40,7 +40,7 @@
             <div id="modalWrapper" class="modalWrapper" onclick="">
                 <div id= "modalContainer" class="modal">
                     <div class="title">
-                        <h2 id="title">Agregar Empleado</h2>
+                        <h2 id="title">Agregar Usuario</h2>
                         <a href="#"id="close"class="close"onclick="closeModal()">x</a>
                     </div>
                     <div class="formContainer">
@@ -66,12 +66,27 @@
                                 <div id="phoneError">Solo puedes introducir números</div>
                             </div>
                             <div class="contentBtn">
-                            <input type="submit" id="btn-add" value="Agregar"class="btnModal" onclick="createUser()">
-                            <input type="button" id="btn-cancel" value="Cancelar"class="btnModal">
+                                <input type="submit" id="btn-add" value="Agregar"class="btnModal" onclick="createUser()">
+                                <input type="button" id="btn-cancel" value="Cancelar"class="btnModal">
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+            <!-- /* esto hay que hacerlo dinámico*/ -->
+                <div id="modalDelete" class="modalDelete">
+                    <div class="title">
+                        <h2>Borrar Empleado</h2>
+                        <a href="#"id="close"class="close"onclick="closeDelete()">x</a>
+                    </div> 
+                    <div class="message">
+                        <p>¿seguro quieres borrar este registro?</p>
+                        <p>Esta acción no se puede deshacer</p>
+                    </div>
+                    <div class="buttons">
+                        <input type="button" id="btn-delete" value="borrar"class="btnModal">
+                        <input type="button" id="btn-cancel" value="Cancelar"class="btnModal"onclick="closeDelete(id)">
+                    </div>
+                </div>
        </body>
 </html>
