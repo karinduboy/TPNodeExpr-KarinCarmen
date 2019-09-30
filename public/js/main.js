@@ -75,18 +75,18 @@ const isValid = (payload) => {
 };
 
 const openModal = ()=>{
-    const container = document.getElementById("container");
-    container.style.display="none";
-    const modal =  document.getElementById("modalContainer");
+    // const container = document.getElementById("container");
+    // container.style.display="none";
+    const modal =  document.getElementById("modalWrapper");
     modal.style.display="block";
 
 
 };
 
 const closeModal = ()=>{
-    const container = document.getElementById("container");
-    container.style.display="block";
-    const modal =  document.getElementById("modalContainer");
+    // const container = document.getElementById("container");
+    // container.style.display="block";
+    const modal =  document.getElementById("modalWrapper");
     modal.style.display="none";
 };
 

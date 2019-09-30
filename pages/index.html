@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Users Management</title>
     <script src="js/main.js" type="text/javascript"></script>
-    <script src="js/users.js" type="text/javascript"></script>
+    <script src="js/validations.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 </head>
@@ -37,38 +37,40 @@
                      </tbody>
                 </table>
             </div>
-            <div id= "modalContainer" class="modal">
-                <div class="title">
-                    <h2 id="title">Agregar Empleado</h2>
-                    <a href="#"id="close"class="close"onclick="closeModal()">x</a>
-                </div>
-                <div>
-                    <form action="#" id="userDataForm">
-                        <div class="inputGroup">
-                            <label class="label" for="name">Nombre:</label>
-                            <input type="text" id="name" placeholder="Nombre..." required  minlength="2" maxlength="30" title="El nombre debe tener entre 2 y 30 caracteres" onblur="checkInputLenght(this,2,30)" onkeyup="checkInputLenght(this,2,30)">
-                            <div id="nameError" class="valid"></div>
-                        </div>
-                        <div class="inputGroup">
-                            <label class="label" for="email">Email:</label>
-                            <input type="email" id="email" placeholder="Email..." required onblur="checkEmail(this)" onkeyup="checkEmail(this)">
-                            <div id="emailError" class="valid"></div>
-                        </div>
-                        <div class="inputGroup">
-                            <label class="label" for="address">Dirección:</label>
-                            <input type="address" id="address" placeholder="Dirección..." required onblur="checkInputLenght(this,2,30)" onkeyup="checkInputLenght(this,2,30)">
-                            <div id="addressError" class="valid"></div>
-                        </div>
-                        <div class="inputGroup">
-                            <label class="label" for="phone">Phone:</label>
-                            <input type="number" id="phone" placeholder="Teléfono..." required onblur="checkPhone(this)" onkeypress="checkPhone(this)">
-                            <div id="phoneError" class="valid"></div>
-                        </div>
-                        <div class="contentBtn">
-                        <input type="submit" id="btn-add" value="Agregar"class="btnModal" onclick="createUser()">
-                        <input type="button" id="btn-cancel" value="Cancelar"class="btnModal">
-                        </div>
-                    </form>
+            <div id="modalWrapper" class="modalWrapper" onclick="">
+                <div id= "modalContainer" class="modal">
+                    <div class="title">
+                        <h2 id="title">Agregar Empleado</h2>
+                        <a href="#"id="close"class="close"onclick="closeModal()">x</a>
+                    </div>
+                    <div class="formContainer">
+                        <form action="#" id="userDataForm">
+                            <div class="inputGroup">
+                                <label class="label" for="name">Nombre:</label>
+                                <input type="text" id="name" placeholder="Nombre..." class="valid" onblur="checkInputLength(this,2,30)" onkeyup="checkInputLength(this,2,30)">
+                                <div id="nameError">El nombre debe tener entre 2 y 30 caracteres</div>
+                            </div>
+                            <div class="inputGroup">
+                                <label class="label" for="email">Email:</label>
+                                <input type="email" id="email" placeholder="Email..." required onblur="checkEmail(this)" onkeyup="checkEmail(this)">
+                                <div id="emailError">email inválido</div>
+                            </div>
+                            <div class="inputGroup">
+                                <label class="label" for="address">Dirección:</label>
+                                <input type="address" id="address" placeholder="Dirección..." required onblur="checkInputLength(this,2,30)" onkeyup="checkInputLength(this,2,30)">
+                                <div id="addressError">La dirección debe tener entre 2 y 30 caracteres</div>
+                            </div>
+                            <div class="inputGroup">
+                                <label class="label" for="phone">Phone:</label>
+                                <input type="number" id="phone" placeholder="Teléfono..." required onblur="checkPhone(this)" onkeyup="checkPhone(this)">
+                                <div id="phoneError">Solo puedes introducir números</div>
+                            </div>
+                            <div class="contentBtn">
+                            <input type="submit" id="btn-add" value="Agregar"class="btnModal" onclick="createUser()">
+                            <input type="button" id="btn-cancel" value="Cancelar"class="btnModal">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
        </body>

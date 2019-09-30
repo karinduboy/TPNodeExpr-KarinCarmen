@@ -13,6 +13,7 @@ $bodyBg: rgb(216, 236, 230);
 $modalBg:  rgb(184, 221, 169);
 $fontColor: rgb(4, 39, 37);
 $tbBg:whitesmoke;
+$inpBrd: #6f6f6f;
 
 @mixin childFlex{
     display:flex;
@@ -153,79 +154,149 @@ body{
                     }
                 }
         }
-    .modal{
-        width: 28%;
-        min-width:230px;
-        height: 500px;
-        background-color:$modalBg;
-        margin:24px 36%;
-        position: absolute;
-        display:none;
-        .title{
-            @include childFlex;
-            width: 100%;
-            height: 80px;
-            background-color:$headerBg; 
-            h2{
-                font-size:32px;
-                margin:24px;
-            }
-            a{
-                @include a;
-                color: 1px $fontColor;
-                font-size: 20px;
-                margin:4px;
-            }
-        }
-        .inputGroup{
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            justify-content: center; 
-            width: 90%;
-            margin:24px;
-            .label{
-                font-size: 16px;
-                font-weight: 800;
-                margin-bottom: 4px;
-
-            }
-            input{
-                height: 32px;
-                color: $fontColor;
-                border:none;
-                .valid{ //REVISAR
-                    color:#3c3c3c;
-                    font-family:principal;
-                    font-size:18px;
-                    line-height:22px;
-                    background-color:#fbfbfb;
-                    padding: 13px 13px 13px 54px;
-                    margin-bottom:10px;
-                    width:100%;
-                    box-sizing:border-box;
+    .modalWrapper{
+        background-color: rgba(0, 0, 0, 0.85);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        z-index: 100;
+        .modal{
+            box-sizing: border-box;
+            width: 40%;
+            min-width:385px;
+            max-width: 450px;
+            height: auto;
+            // max-height: 90vh;
+            margin: 5% auto 5%;
+            background-color:$modalBg;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 5px;
+            z-index:200;
+            overflow: hidden;
+            .title{
+                // @include childFlex;
+                box-sizing: border-box;
+                width: 100%;
+                padding: 5%;
+                // min-height: 60px;
+                background-color:$headerBg;
+                h2{
+                    font-size:30px;
+                    text-align: center;
+                    line-height: 30px;
+                    vertical-align: center;
+                    // margin:24px;
+                    @media only screen and (max-width : 900px){
+                        font-size: 26px;
+                    }
+                }
+                a{ 
+                    @include a;
+                    color: $btnBg;
+                    font-size: 20px;
+                    font-weight: 400;
+                    margin:4px;
+                    background-color: $modalBg;
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 5%;
+                    text-align: center;
+                    line-height: 30px;
+                    &:hover{
+                        background-color: $btnText;
+                        color: $actIconHover;
+                        transition:all 0.3s ease;
+                    }
                 }
             }
+            .formContainer{
+                width: 100%;
+                .inputGroup{
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: left;
+                    width: 80%;
+                    margin:5% 10%;
+                    .label{
+                        font-size: 16px;
+                        font-weight: 800;
+                        margin-bottom: 4px;
+                    }
+                    input{
+                        height: 32px;
+                        width: 100%;
+                        color: $fontColor;
+                        border:1px solid $inpBrd;
+                        border-radius: 3px;
+                        // position: relative;
+                        &:focus{
+                            outline: none;
+                            border: 3px solid $inpBrd; 
+                            box-shadow: $fontColor 5px 10px 10px;
+                        }
+                        // .valid{ //REVISAR
+                        //     color:#3c3c3c;
+                        //     font-size:18px;
+                        //     line-height:22px;
+                        //     background-color:#fbfbfb;
+                        //     padding: 13px 13px 13px 54px;
+                        //     margin-bottom:10px;
+                        //     width:100%;
+                        //     box-sizing:border-box;
+                        // }
+                        .error{
+                            color: red;
+                            border: 2px solid darkred;
+                        }
+                    }
+                    div{
+                        display: none;
+                        &.error{
+                            display: block;
+                            color:darkred;
+                            height: 20px;
+                            font-weight: 200;
+                            font-size: 0.7em;
+                            position:relative;
+                            right: 0px;
+                            top: -52px;
+                            text-align: right;
+                        }
+                    }
+                    
+
+                }
+            }
+            .contentBtn{
+                width: 80%;
+                margin: 10% 10%;
+                @include childFlex;
+                justify-content: space-between;
+            }
+            .btnModal{
+                width: 40%;
+                background-color: $btnBg;
+                color: $btnText;
+                height: 32px;
+                font-weight: 400;
+                font-size: 16px;
+                &:hover{
+                    background-color: $btnBgHover;
+                    color: $actIconHover;
+                    transition:all 0.3s ease;
+                } 
+            }
         }
-        .contentBtn{
-            width: 100%;
-            @include childFlex;
-            justify-content: space-around;
-            margin-top:60px;
-        }
-        .btnModal{
-            width: 100px; 
-            background-color: $btnBg;
-            color:$btnText;
-            height: 32px;
-            font-weight: 400;
-            font-size: 16px;
-            &:hover{
-                background-color:$btnBgHover;
-                color:$actIconHover;
-                transition:all 0.3s ease;
-            } 
-        }
-    }
+    }        
 }
+

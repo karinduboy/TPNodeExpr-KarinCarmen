@@ -235,51 +235,92 @@ body .container .table td a:hover {
   color: #032c2a;
 }
 
-body .modal {
-  width: 28%;
-  min-width: 230px;
-  height: 500px;
-  background-color: #b8dda9;
-  margin: 24px 36%;
-  position: absolute;
+body .modalWrapper {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
   display: none;
+  z-index: 100;
 }
 
-body .modal .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+body .modalWrapper .modal {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 40%;
+  min-width: 385px;
+  max-width: 450px;
+  height: auto;
+  margin: 5% auto 5%;
+  background-color: #b8dda9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 5px;
+  z-index: 200;
+  overflow: hidden;
+}
+
+body .modalWrapper .modal .title {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
-  height: 80px;
+  padding: 5%;
   background-color: #6dcc7d;
 }
 
-body .modal .title h2 {
-  font-size: 32px;
-  margin: 24px;
+body .modalWrapper .modal .title h2 {
+  font-size: 30px;
+  text-align: center;
+  line-height: 30px;
+  vertical-align: center;
 }
 
-body .modal .title a {
+@media only screen and (max-width: 900px) {
+  body .modalWrapper .modal .title h2 {
+    font-size: 26px;
+  }
+}
+
+body .modalWrapper .modal .title a {
   text-decoration: none;
   cursor: pointer;
   color: #329e11;
-  color: 1px #042725;
+  color: #0b9b2f;
   font-size: 20px;
+  font-weight: 400;
   margin: 4px;
+  background-color: #b8dda9;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 5%;
+  text-align: center;
+  line-height: 30px;
 }
 
-body .modal .title a:hover {
+body .modalWrapper .modal .title a:hover {
   color: #032c2a;
 }
 
-body .modal .inputGroup {
+body .modalWrapper .modal .title a:hover {
+  background-color: #b7f0ed;
+  color: #032c2a;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+body .modalWrapper .modal .formContainer {
+  width: 100%;
+}
+
+body .modalWrapper .modal .formContainer .inputGroup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,41 +331,58 @@ body .modal .inputGroup {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-content: center;
-  width: 90%;
-  margin: 24px;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  width: 80%;
+  margin: 5% 10%;
 }
 
-body .modal .inputGroup .label {
+body .modalWrapper .modal .formContainer .inputGroup .label {
   font-size: 16px;
   font-weight: 800;
   margin-bottom: 4px;
 }
 
-body .modal .inputGroup input {
+body .modalWrapper .modal .formContainer .inputGroup input {
   height: 32px;
+  width: 100%;
   color: #042725;
-  border: none;
+  border: 1px solid #6f6f6f;
+  border-radius: 3px;
 }
 
-body .modal .inputGroup input .valid {
-  color: #3c3c3c;
-  font-family: principal;
-  font-size: 18px;
-  line-height: 22px;
-  background-color: #fbfbfb;
-  padding: 13px 13px 13px 54px;
-  margin-bottom: 10px;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+body .modalWrapper .modal .formContainer .inputGroup input:focus {
+  outline: none;
+  border: 3px solid #6f6f6f;
+  -webkit-box-shadow: #042725 5px 10px 10px;
+          box-shadow: #042725 5px 10px 10px;
 }
 
-body .modal .contentBtn {
-  width: 100%;
+body .modalWrapper .modal .formContainer .inputGroup input .error {
+  color: red;
+  border: 2px solid darkred;
+}
+
+body .modalWrapper .modal .formContainer .inputGroup div {
+  display: none;
+}
+
+body .modalWrapper .modal .formContainer .inputGroup div.error {
+  display: block;
+  color: darkred;
+  height: 20px;
+  font-weight: 200;
+  font-size: 0.7em;
+  position: relative;
+  right: 0px;
+  top: -52px;
+  text-align: right;
+}
+
+body .modalWrapper .modal .contentBtn {
+  width: 80%;
+  margin: 10% 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -335,13 +393,11 @@ body .modal .contentBtn {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-top: 60px;
+  justify-content: space-between;
 }
 
-body .modal .btnModal {
-  width: 100px;
+body .modalWrapper .modal .btnModal {
+  width: 40%;
   background-color: #0b9b2f;
   color: #b7f0ed;
   height: 32px;
@@ -349,7 +405,7 @@ body .modal .btnModal {
   font-size: 16px;
 }
 
-body .modal .btnModal:hover {
+body .modalWrapper .modal .btnModal:hover {
   background-color: #50ce2a;
   color: #032c2a;
   -webkit-transition: all 0.3s ease;
