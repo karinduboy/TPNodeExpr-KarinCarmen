@@ -23,16 +23,16 @@ const postUser = (req, res, next) => {
 	next();
 };
 const searchByQuery = (req,res,next) => {
-    let query = req.params.query;
-    console.log(query)
-    let searchedUsers = (users, query) => { users.filter(user => user.values(users).some( value => user[value].includes(query)))};
-    if (searchedUsers) {
-    res.json({searchedUsers});
-    } else {
-        res.status('404').json(`No encontramos ningún usuario con ${query}`)
-    };
+        let query = req.params.query;
+        let results = users.filter(user => Object.keys(user).find(prop => user[prop].includes(query)))
+	if (results.length !== 0) {
+		res.status('201').json({results})
+	} else {
+		res.status('404').json('No encontramos ninguna coincidencia')
+	}
     next();
 }
+        
 
 
 

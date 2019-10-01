@@ -97,15 +97,20 @@ const patchExample = (id, payload) => {
 		});
 };
 
+const onSearch = event => {
+    let query = event.target.value
+    if (event.code === 'Enter' && query.length !== 0) {
+        searchByQuery()
+    } 
+}
 
 const searchByQuery= () =>{
-    if ( event.keyCode===13){
     let query = document.getElementById("search").value;
-     fetch(`/api/users/${query}`)
-     then((res) => res.json())
+     fetch(`/api/users/search/${query}`)
+     .then((res) => res.json())
      .then(res=> console.log(res))  
     }  
-}
+
 
 
 
