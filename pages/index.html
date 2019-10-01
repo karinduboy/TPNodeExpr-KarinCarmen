@@ -20,8 +20,9 @@
                 <a href="#"onclick="openModal()" class="button" id="buttonAdd"><span class="more">+</span>NUEVO USUARIO</a>
             </header>
             <div class="searchFather">
-                <input type="search" placeholder= "Filter..." id="search" class="search" onkeypress="searchByQuery()">
+                <input type="search" placeholder= "Buscar..." id="search" class="search" onkeypress="searchByQuery()">
             </div>
+            <div class="tableContainer">
                 <table class="table">
                     <thead>
                         <tr class="requiredFields">
@@ -37,6 +38,7 @@
                      </tbody>
                 </table>
             </div>
+        </div>
             <div id="modalWrapper" class="modalWrapper" onclick="">
                 <div id= "modalContainer" class="modal">
                     <div class="title">
@@ -74,9 +76,10 @@
                 </div>
             </div>
             <!-- /* esto hay que hacerlo dinámico*/ -->
+                <div id="deleteFather" class="modalWrapper">
                 <div id="modalDelete" class="modalDelete">
                     <div class="title">
-                        <h2>Borrar Empleado</h2>
+                        <h2>Borrar Usuario</h2>
                         <a href="#"id="close"class="close"onclick="closeDelete()">x</a>
                     </div> 
                     <div class="message">
@@ -88,5 +91,6 @@
                         <input type="button" id="btn-cancel" value="Cancelar"class="btnModal"onclick="closeDelete(id)">
                     </div>
                 </div>
+            </div>
        </body>
 </html>

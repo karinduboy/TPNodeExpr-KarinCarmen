@@ -7,7 +7,7 @@ const router = require('./modules/router');
 
 //variables que usan los módulos
 const server = express();
-const port = 3000; //defino el puerto donde quiero ejecutar el servidor
+const port = 3001; //defino el puerto donde quiero ejecutar el servidor
 
 server.use(
 	bodyParser.urlencoded({ 

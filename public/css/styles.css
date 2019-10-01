@@ -39,7 +39,7 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -54,68 +54,68 @@ a {
 
 body {
   font-size: 16px;
-  background-color: #d8ece6;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: #b8dda9;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   margin-top: 40px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: #042725;
 }
-
+@media only screen and (max-width: 290px) {
+  body {
+    margin-top: 16px;
+  }
+}
 body .content {
   position: relative;
 }
-
 body .container {
   margin: 0 auto;
   width: 80%;
 }
-
+@media only screen and (max-width: 700px) {
+  body .container {
+    width: 96%;
+  }
+}
 body .container .headerTable {
+  display: flex;
+  flex-direction: row;
   font-size: 16px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  background-color: #032c2a;
+  background-color: #033f30;
   height: 80px;
 }
-
 body .container .headerTable h2 {
-  color: #b7f0ed;
+  display: flex;
+  flex-direction: row;
+  color: #d8ece6;
   width: 60%;
   padding: 24px;
   font-size: 28px;
   font-style: italic;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
-
+@media only screen and (max-width: 700px) {
+  body .container .headerTable h2 {
+    font-size: 22px;
+    padding-bottom: 8px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  body .container .headerTable h2 {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 290px) {
+  body .container .headerTable h2 {
+    font-size: 14px;
+  }
+}
 body .container .headerTable .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 25%;
   background-color: #0b9b2f;
   color: #b7f0ed;
@@ -123,14 +123,30 @@ body .container .headerTable .button {
   margin: 16px 5%;
   font-weight: 400;
 }
-
+@media only screen and (max-width: 700px) {
+  body .container .headerTable .button {
+    font-size: 14px;
+    padding-right: 8px;
+    width: 35%;
+  }
+}
+@media only screen and (max-width: 520px) {
+  body .container .headerTable .button {
+    font-size: 12px;
+    width: 30%;
+    height: 36px;
+  }
+}
+@media only screen and (max-width: 290px) {
+  body .container .headerTable .button {
+    font-size: 10px;
+  }
+}
 body .container .headerTable .button:hover {
   background-color: #50ce2a;
   color: #032c2a;
-  -webkit-transition-delay: 8ms;
-          transition-delay: 8ms;
+  transition-delay: 8ms;
 }
-
 body .container .headerTable .button .more {
   margin: 8px;
   border-radius: 50%;
@@ -139,102 +155,90 @@ body .container .headerTable .button .more {
   padding: 0 4px;
   font-weight: bold;
 }
-
 body .container .headerTable .button .more:hover {
   background-color: #50ce2a;
   color: #032c2a;
-  -webkit-transition-delay: 8ms;
-          transition-delay: 8ms;
+  transition-delay: 8ms;
 }
-
 body .container .searchFather {
   width: 100%;
-  background-color: whitesmoke;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  flex-direction: row-reverse;
   height: 80px;
 }
-
 body .container .searchFather .search {
-  width: 35%;
-  height: 40px;
+  width: 30%;
   margin: 16px;
+  border-radius: 20px;
+  outline: none;
+  background-color: white;
+  border: 0;
+  padding: 20px;
 }
-
+@media only screen and (max-width: 520px) {
+  body .container .searchFather .search {
+    width: 50%;
+    font-size: 12px;
+  }
+}
 body .container .table {
-  background-color: whitesmoke;
-  width: 100%;
-}
-
-body .container .table tr {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 20%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  overflow: hidden;
-  border-bottom: 1px solid #8ca8a7;
-  width: 95%;
-  margin: 0 auto;
-  height: 40px;
-  margin-top: 16px;
-  width: 98%;
-}
-
-body .container .table th {
-  text-align: left;
-  font-weight: bold;
-  width: 19%;
-  margin: 0 1%;
-  overflow: hidden;
-}
-
-body .container .table th .checkbox {
-  margin-right: 16px;
-}
-
-body .container .table th .contentIcons {
-  text-align: center;
-}
-
-body .container .table td {
-  text-align: left;
-  font-weight: bold;
-  width: 19%;
-  margin: 0 1%;
-  overflow: hidden;
-  font-weight: normal;
   font-size: 14px;
+  border: 1px solid rgba(181, 213, 144, 0.5);
+  border-top: #033f30;
+  color: #666;
+  border-collapse: collapse;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-body .container .table td .contentIcons {
-  text-align: right;
+@media only screen and (max-width: 290px) {
+  body .container .table {
+    font-size: 12px;
+  }
 }
-
-body .container .table td a {
+body .container .table td, body .container .table th {
+  padding: 8px;
+  border-bottom: 1px solid rgba(181, 213, 144, 0.5);
+}
+body .container .table td a, body .container .table th a {
   text-decoration: none;
   cursor: pointer;
   color: #329e11;
 }
-
-body .container .table td a:hover {
+body .container .table td a:hover, body .container .table th a:hover {
   color: #032c2a;
 }
-
+body .container .table td a:first-of-type, body .container .table th a:first-of-type {
+  padding-right: 24px;
+}
+body .container .table th {
+  background-color: #3f794d;
+  color: #fff;
+  font-weight: normal;
+  text-align: center;
+}
+body .container .table td {
+  text-align: center;
+}
+body .container .table td:first-of-type {
+  text-align: left;
+}
+body .container .table tr:hover {
+  background: rgba(181, 213, 144, 0.2);
+}
+body .container .table tr td:nth-child(2n) {
+  background: rgba(181, 213, 144, 0.2);
+}
+body .container .tableContainer {
+  overflow-x: auto;
+}
+body .container .table {
+  min-width: 900px;
+  width: 100%;
+}
+body .container .table th:first-child {
+  width: 140px;
+}
 body .modalWrapper {
   background-color: rgba(0, 0, 0, 0.85);
   position: fixed;
@@ -245,10 +249,8 @@ body .modalWrapper {
   display: none;
   z-index: 100;
 }
-
 body .modalWrapper .modal {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 40%;
   min-width: 385px;
   max-width: 450px;
@@ -258,34 +260,39 @@ body .modalWrapper .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   border-radius: 5px;
   z-index: 200;
   overflow: hidden;
 }
-
+@media only screen and (max-width: 400px) {
+  body .modalWrapper .modal {
+    min-width: 240px;
+    max-width: 350px;
+  }
+}
 body .modalWrapper .modal .title {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   padding: 5%;
   background-color: #6dcc7d;
 }
-
 body .modalWrapper .modal .title h2 {
   font-size: 30px;
   text-align: center;
   line-height: 30px;
   vertical-align: center;
 }
-
 @media only screen and (max-width: 900px) {
   body .modalWrapper .modal .title h2 {
     font-size: 26px;
   }
 }
-
+@media only screen and (max-width: 400px) {
+  body .modalWrapper .modal .title h2 {
+    font-size: 22px;
+  }
+}
 body .modalWrapper .modal .title a {
   text-decoration: none;
   cursor: pointer;
@@ -304,46 +311,30 @@ body .modalWrapper .modal .title a {
   text-align: center;
   line-height: 30px;
 }
-
 body .modalWrapper .modal .title a:hover {
   color: #032c2a;
 }
-
 body .modalWrapper .modal .title a:hover {
   background-color: #b7f0ed;
   color: #032c2a;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 body .modalWrapper .modal .formContainer {
   width: 100%;
 }
-
 body .modalWrapper .modal .formContainer .inputGroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
   width: 80%;
   margin: 5% 10%;
 }
-
 body .modalWrapper .modal .formContainer .inputGroup .label {
   font-size: 16px;
   font-weight: 800;
   margin-bottom: 4px;
 }
-
 body .modalWrapper .modal .formContainer .inputGroup input {
   height: 32px;
   width: 100%;
@@ -351,23 +342,18 @@ body .modalWrapper .modal .formContainer .inputGroup input {
   border: 1px solid #6f6f6f;
   border-radius: 3px;
 }
-
 body .modalWrapper .modal .formContainer .inputGroup input:focus {
   outline: none;
   border: 3px solid #6f6f6f;
-  -webkit-box-shadow: #042725 5px 10px 10px;
-          box-shadow: #042725 5px 10px 10px;
+  box-shadow: #042725 5px 10px 10px;
 }
-
 body .modalWrapper .modal .formContainer .inputGroup input .error {
   color: red;
   border: 2px solid darkred;
 }
-
 body .modalWrapper .modal .formContainer .inputGroup div {
   display: none;
 }
-
 body .modalWrapper .modal .formContainer .inputGroup div.error {
   display: block;
   color: darkred;
@@ -379,23 +365,14 @@ body .modalWrapper .modal .formContainer .inputGroup div.error {
   top: -52px;
   text-align: right;
 }
-
 body .modalWrapper .modal .contentBtn {
   width: 80%;
   margin: 10% 10%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
   justify-content: space-between;
 }
-
 body .modalWrapper .modal .btnModal {
   width: 40%;
   background-color: #0b9b2f;
@@ -404,14 +381,11 @@ body .modalWrapper .modal .btnModal {
   font-weight: 400;
   font-size: 16px;
 }
-
 body .modalWrapper .modal .btnModal:hover {
   background-color: #50ce2a;
   color: #032c2a;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 body .modalDelete {
   width: 30%;
   height: 240px;
@@ -420,28 +394,52 @@ body .modalDelete {
   background-color: #83ee9e;
   display: none;
 }
-
+@media only screen and (max-width: 900px) {
+  body .modalDelete {
+    width: 46%;
+    margin: 24px 28%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  body .modalDelete {
+    width: 60%;
+    margin: 24px 20%;
+  }
+}
+@media only screen and (max-width: 520px) {
+  body .modalDelete {
+    width: 80%;
+    margin: 24px 10%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  body .modalDelete {
+    width: 96%;
+    margin: 24px 2%;
+  }
+}
 body .modalDelete .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
   height: 80px;
   background-color: #6dcc7d;
 }
-
+@media only screen and (max-width: 400px) {
+  body .modalDelete .title {
+    height: 60px;
+  }
+}
 body .modalDelete .title h2 {
   font-size: 32px;
   margin: 24px;
 }
-
+@media only screen and (max-width: 400px) {
+  body .modalDelete .title h2 {
+    font-size: 22px;
+  }
+}
 body .modalDelete .title a {
   text-decoration: none;
   cursor: pointer;
@@ -450,39 +448,31 @@ body .modalDelete .title a {
   font-size: 20px;
   margin: 4px;
 }
-
 body .modalDelete .title a:hover {
   color: #032c2a;
 }
-
 body .modalDelete .message {
   width: 100%;
   height: 80px;
   text-align: center;
 }
-
+@media only screen and (max-width: 400px) {
+  body .modalDelete .message {
+    height: 100px;
+  }
+}
 body .modalDelete .message p {
   padding-top: 16px;
   font-size: 18px;
 }
-
 body .modalDelete .buttons {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 20px;
 }
-
 body .modalDelete .btnModal {
   width: 100px;
   background-color: #0b9b2f;
@@ -491,11 +481,10 @@ body .modalDelete .btnModal {
   font-weight: 400;
   font-size: 16px;
 }
-
 body .modalDelete .btnModal:hover {
   background-color: #50ce2a;
   color: #032c2a;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 /*# sourceMappingURL=styles.css.map */

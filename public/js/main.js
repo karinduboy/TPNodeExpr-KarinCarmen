@@ -127,11 +127,11 @@ const modalValues = () => {
 }
 
 const openModalDelete = (id)=>{
-    const container = document.getElementById('container');
-    container.style.display='none';
-    const modal =  document.getElementById('modalDelete');
-    modal.style.display="block";
-    const btnDelete = document.getElementById("btn-delete");
+    const mask = document.getElementById('deleteFather');
+    mask.style.display='block';
+    const modal = document.getElementById('modalDelete');
+    modal.style.display='block';
+    const btnDelete = document.getElementById('btn-delete');
     btnDelete.onclick= () =>deleteUser(id);
    }
 

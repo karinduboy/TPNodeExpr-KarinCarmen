@@ -2,44 +2,41 @@
 
 //variables
 $tbBorder:rgb(140, 168, 167);
-$tbHeaderBg:  rgb(3, 44, 42);
+$tbHeaderBg: rgb(3, 63, 48);
 $actIcon: rgb(50, 158, 17);
 $actIconHover: rgb(3, 44, 42);
 $btnBgHover: rgb(80, 206, 42);
 $btnBg:rgb(11, 155, 47);
 $headerBg: rgb(109, 204, 125);
 $btnText:  rgb(183, 240, 237);
-$bodyBg: rgb(216, 236, 230);
+$bodyBg: rgb(184, 221, 169);
 $modalBg:  rgb(184, 221, 169);
 $fontColor: rgb(4, 39, 37);
 $tbBg:whitesmoke;
 $inpBrd: #6f6f6f;
+$secondaryColor: lighten(#76A63F,25);
+$fontThBg: #fff;
+$thBg:rgb(63, 121, 77);
+$h2Bg:rgb(216, 236, 230);
+$width: 900px;
+$frozen-width: 140px;
+
 
 @mixin childFlex{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
 }
-@mixin trBorder {
-    border-bottom: 1px solid $tbBorder;  
-    width: 95%;
-    margin: 0 auto;
+@mixin row{
+    display:flex;
+    flex-direction: row;
+    
 }
+@mixin center {
+    margin-left : auto;
+    margin-right : auto;
+  }
 
-@mixin td{
-    width: 20%;
-    @include childFlex;
-    overflow: hidden;
-
-}
-
-@mixin th {
-    text-align: left;
-    font-weight: bold;
-    width: 19%;
-    margin: 0 1%;
-    overflow: hidden;
-}
 @mixin a {
     text-decoration: none;
     cursor: pointer;
@@ -57,28 +54,44 @@ body{
     margin-top: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:$fontColor;
+    @media only screen and (max-width : 290px){
+        
+        margin-top: 16px;
+    }
         .content{
             position:relative;
         }
         .container{
             margin: 0 auto;
             width: 80%;
+            @media only screen and (max-width : 700px){
+                width: 96%;
+            }
             .headerTable{
+                @include row;
                 font-size: 16px;
                 width: 100%;
-                display:flex;
-                flex-direction: row;
                 background-color:$tbHeaderBg;
                 height: 80px;
-                    h2{
-                        color:$btnText;
+               
+                     h2{
+                        @include row;
+                        color:$h2Bg;
                         width: 60%;
                         padding: 24px;
                         font-size: 28px;
                         font-style: italic;
-                        display:flex;
-                        flex-direction: row;
+                        @media only screen and (max-width : 700px){
+                            font-size: 22px;
+                            padding-bottom: 8px;
                         }
+                        @media only screen and (max-width : 520px){
+                            font-size: 18px;
+                        }
+                        @media only screen and (max-width : 290px){
+                            font-size: 14px;
+                        }
+                       }
                     .button{
                         display:flex;
                         justify-content: center;
@@ -89,6 +102,19 @@ body{
                         height: 48px;
                         margin: 16px 5%;
                         font-weight: 400;
+                        @media only screen and (max-width : 700px){
+                            font-size: 14px;
+                            padding-right: 8px;
+                            width: 35%;
+                        }
+                        @media only screen and (max-width : 520px){
+                            font-size: 12px;
+                            width: 30%;
+                            height: 36px;
+                        }
+                        @media only screen and (max-width : 290px){
+                            font-size: 10px;
+                        }
                         &:hover{
                             background-color:$btnBgHover;
                             color:$actIconHover;
@@ -111,49 +137,82 @@ body{
                 }
                 .searchFather{
                     width: 100%;
-                    background-color: whitesmoke;
                     display: flex;
                     flex-direction: row-reverse;
                     height:80px;
                     .search{
-                        width: 35%;
-                        height: 40px;
+                        width: 30%;
                         margin: 16px;
+                        border-radius: 20px;
+                        outline: none;
+                        background-color:white;
+                        border: 0;
+                        padding: 20px;
+                        @media only screen and (max-width : 520px){
+                            width: 50%;
+                            font-size: 12px;
+                        }
+                        
                     }
                 }
                 .table{
-                    background-color:$tbBg;
-                    width: 100%;
-                    tr{
-                        @include childFlex;
-                        @include td;
-                        @include trBorder;
-                        height: 40px;
-                        margin-top: 16px;
-                        width: 98%;
-                    }        
-                    th{
-                        @include th;
-                        .checkbox{
-                            margin-right: 16px;
+                    font-size: 14px;
+                    border: 1px solid rgba($secondaryColor,.5);
+                    border-top: $tbHeaderBg;
+                    color: #666;
+                    border-collapse: collapse;
+                    background-color: #fff;
+                    @media only screen and (max-width : 290px){
+        
+                        font-size: 12px;
+                    }
+                    @include center;
+                    td, th {
+                        padding : 8px;
+                        border-bottom: 1px solid rgba($secondaryColor,.5);
+                        a{
+                         @include a;
+                         &:first-of-type {
+                             padding-right: 24px;
+                             
+                             
+                           }
+                         
+                       }
+                     }
+                     th {
+                       background-color :$thBg;
+                       color: $fontThBg;
+                       font-weight : normal;
+                       text-align : center;
+                    }
+                    td {
+                      text-align : center;
+                      &:first-of-type {
+                      text-align : left;
+                     }
+                    }
+                    tr {
+                        &:hover {
+                            background : rgba($secondaryColor,.2);
                         }
-                        .contentIcons{
-                            text-align: center;
+                        td:nth-child(2n){
+                             background : rgba($secondaryColor,.2);
+                            }
                         }
                     }
-                    td{
-                        @include th;
-                        font-weight: normal;
-                        font-size: 14px;
-                        .contentIcons{
-                        text-align: right;
-                        }
-                        a{
-                        @include a;
+                    .tableContainer {
+                        overflow-x: auto;
+                    }
+                    .table {
+                        min-width: $width;
+                        width: 100%;
+                        th:first-child {
+                            width : $frozen-width;
                         }
                     }
                 }
-        }
+                    
     .modalWrapper{
         background-color: rgba(0, 0, 0, 0.85);
         position: fixed;
@@ -169,7 +228,6 @@ body{
             min-width:385px;
             max-width: 450px;
             height: auto;
-            // max-height: 90vh;
             margin: 5% auto 5%;
             background-color:$modalBg;
             position: absolute;
@@ -179,21 +237,25 @@ body{
             border-radius: 5px;
             z-index:200;
             overflow: hidden;
+            @media only screen and (max-width : 400px){
+                min-width:240px;
+                max-width: 350px; 
+            }
             .title{
-                // @include childFlex;
                 box-sizing: border-box;
                 width: 100%;
                 padding: 5%;
-                // min-height: 60px;
                 background-color:$headerBg;
                 h2{
                     font-size:30px;
                     text-align: center;
                     line-height: 30px;
                     vertical-align: center;
-                    // margin:24px;
                     @media only screen and (max-width : 900px){
                         font-size: 26px;
+                    }
+                    @media only screen and (max-width : 400px){
+                        font-size: 22px; 
                     }
                 }
                 a{ 
@@ -238,7 +300,6 @@ body{
                         color: $fontColor;
                         border:1px solid $inpBrd;
                         border-radius: 3px;
-                        // position: relative;
                         &:focus{
                             outline: none;
                             border: 3px solid $inpBrd; 
@@ -305,29 +366,57 @@ body{
         margin: 24px 35%;
         background-color: rgb(131, 238, 158);
         display: none;
+        @media only screen and (max-width : 900px){
+            width: 46%;
+            margin: 24px 28%;
+        }
+        @media only screen and (max-width : 700px){
+            width: 60%;
+            margin: 24px 20%;
+        }
+        @media only screen and (max-width : 520px){
+            width: 80%;
+            margin: 24px 10%;
+        }
+        @media only screen and (max-width : 400px){
+            width: 96%;
+            margin: 24px 2%;
+        }
         .title{
             @include childFlex;
             width: 100%;
             height: 80px;
             background-color:rgb(109, 204, 125); 
+            @media only screen and (max-width : 400px){
+                height: 60px;
+            }
+           
             h2{
                 font-size:32px;
                 margin:24px;
+                @media only screen and (max-width : 400px){
+                    font-size: 22px;
+                }
             }
             a{
                 @include a;
                 color: 1px rgb(3, 31, 29);
                 font-size: 20px;
                 margin:4px;
+               
             }
         }
         .message{
             width: 100%;
             height: 80px;
             text-align: center;
+            @media only screen and (max-width : 400px){
+               height: 100px;
+            }
             p{
                 padding-top: 16px; 
                 font-size: 18px;
+                
             }
         }
         .buttons{
