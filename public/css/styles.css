@@ -347,6 +347,16 @@ body .modalWrapper .modal .formContainer .inputGroup input:focus {
   border: 3px solid #6f6f6f;
   box-shadow: #042725 5px 10px 10px;
 }
+body .modalWrapper .modal .formContainer .inputGroup input .valid {
+  color: #3c3c3c;
+  font-size: 18px;
+  line-height: 22px;
+  background-color: #fbfbfb;
+  padding: 13px 13px 13px 54px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
 body .modalWrapper .modal .formContainer .inputGroup input .error {
   color: red;
   border: 2px solid darkred;

@@ -16,7 +16,7 @@ const userView = ({ id, name, email, address, phone }) => `
         <td>${address}</td>
         <td>${phone}</td>
         <td class="contentIcons">
-        <a href="#"onclick="modalChange()"id="${id}"><i class="material-icons" >&#xE254;</i></a>
+        <a href="#"id="${id}"onclick="modalChange(this.id)"><i class="material-icons" >&#xE254;</i></a>
         <a href="#" id="${id}" onclick="openModalDelete(this.id)" ><i class="material-icons">&#xE872;</i></a>
         </td>
     </tr>
@@ -28,9 +28,6 @@ const printUsers = (data) => {
 	data.forEach((e) => (container.innerHTML += userView(e)));
 };
 
-const searchUsersByQuery = () => {
-    
-};
 
 const createUser = () => {
     event.preventDefault();
@@ -76,42 +73,83 @@ const isValid = (payload) => {
 	return true;
 };
 
-//const patchExample = (id, payload) => {
-//	fetch(`api/users/${id}`, {
-	//	method: 'PATCH',
-	//	headers: {
-	//		'Content-Type': 'application/json'
-	//	},
-	//	body: JSON.stringify(payload)
-	//})
-	//	.then((res) => res.json())
-	//	.then((res) => {
-	//		console.log(res);
-	//		formName.value = '';
-     //       formEmail.value = '';
-      //      formAddress.value = '';
-       //     formPhone.value = '';
-		//	initialize();
-		//})
-		//.catch((error) => {
-			// acá van otras cositas
-	//	});
-//};
+
+
+const patchExample = (id, payload) => {
+	fetch(`api/users/${id}`, {
+		method: 'PATCH',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(payload)
+	})
+		.then((res) => res.json())
+		.then((res) => {
+			console.log(res);
+			formName.value = '';
+            formEmail.value = '';
+            formAddress.value = '';
+            formPhone.value = '';
+			initialize();
+		})
+		.catch((error) => {
+			 //acá van otras cositas
+		});
+};
+
 
 const searchByQuery= () =>{
-  let query = document.getElementById("search").value;
     if ( event.keyCode===13){
-        fetch(`/api/users/${query}`)
-        .then((res) => res.json())
-        .then(res=> printUsers(res))  
+    let query = document.getElementById("search").value;
+     fetch(`/api/users/${query}`)
+     then((res) => res.json())
+     .then(res=> console.log(res))  
     }  
 }
+
+
 
 const clean = () =>{
     const tbody = document.getElementById('usersTable')
     tbody.innerHTML = ''
 }
-// datos del modal	
+// datos del modal
+const modalChange = (id) => {
+    const modal = document.getElementById('modalContainer');
+    const title = document.getElementById('title');
+    title.innerText='Editar Usuario'
+    const formName = document.getElementById('name');
+    const formEmail = document.getElementById('email');
+    const formAddress = document.getElementById('address');
+    const formPhone = document.getElementById('phone');
+    
+    const userInfo  = {
+        name: formName.value,
+        email: formEmail.value,
+        address: formAddress.value,
+        phone: formPhone.value
+    };
+    fetch(`api/users/${id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userInfo)
+    })
+        .then((res) => res.json())
+        .then((res) => {
+            formName.value = res.name;
+            formEmail.value = res.email;
+            formAddress.value = res.address;
+            formPhone.value = res.phone;
+        })
+        .catch((error) => {
+             //acá van otras cositas
+        });
+    
+    console.log(modal);
+    }
+    
 const modalValues = () => {	
     const name = document.getElementById('name');	
     const email = document.getElementById('email');	

@@ -305,16 +305,16 @@ body{
                             border: 3px solid $inpBrd; 
                             box-shadow: $fontColor 5px 10px 10px;
                         }
-                        // .valid{ //REVISAR
-                        //     color:#3c3c3c;
-                        //     font-size:18px;
-                        //     line-height:22px;
-                        //     background-color:#fbfbfb;
-                        //     padding: 13px 13px 13px 54px;
-                        //     margin-bottom:10px;
-                        //     width:100%;
-                        //     box-sizing:border-box;
-                        // }
+                        .valid{ 
+                        color:#3c3c3c;
+                            font-size:18px;
+                            line-height:22px;
+                            background-color:#fbfbfb;
+                            padding: 13px 13px 13px 54px;
+                            margin-bottom:10px;
+                            width:100%;
+                            box-sizing:border-box;
+                         }
                         .error{
                             color: red;
                             border: 2px solid darkred;

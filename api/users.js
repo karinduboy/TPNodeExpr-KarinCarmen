@@ -22,7 +22,6 @@ const postUser = (req, res, next) => {
 	}
 	next();
 };
-
 const searchByQuery = (req,res,next) => {
     let query = req.params.query;
     console.log(query)
@@ -30,11 +29,10 @@ const searchByQuery = (req,res,next) => {
     if (searchedUsers) {
     res.json({searchedUsers});
     } else {
-        res.status('404').json(`No encontramos ningún usuario con "${query}"`)
+        res.status('404').json(`No encontramos ningún usuario con ${query}`)
     };
     next();
 }
-
 
 
 
