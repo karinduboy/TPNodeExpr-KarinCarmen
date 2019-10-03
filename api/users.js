@@ -52,7 +52,6 @@ const getUserById = (req, res, next) => {
 
 
 const patchUser = (req,res,next) => {
-    debugger;
     let newUser = req.body;
     let oldUser = users.find(e => e.id === req.body.id);
     let index = users.findIndex(e => e.id === req.body.id);

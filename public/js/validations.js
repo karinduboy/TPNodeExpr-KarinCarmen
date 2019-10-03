@@ -31,7 +31,6 @@ const checkPhone = (fieldInput) => {
 };
 
 const checkForm = (formType,btnId) => {
-    debugger;
     let formName = document.getElementById('name');
     let formEmail = document.getElementById('email');
     let formAddress = document.getElementById('address');

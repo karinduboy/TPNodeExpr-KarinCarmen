@@ -94,7 +94,6 @@ const createUser = () => {
         address: formAddress.value,
         phone: formPhone.value
 	};
-    debugger;
 	if (checkPayload(payload, 'New')) {
 		fetch('/api/users', {
 			method: 'POST',
@@ -120,16 +119,17 @@ const createUser = () => {
     location.reload(); //éste método hace que la página se actualice luego de enviar la info y se vea automáticamente el nuevo usuario, sino hay que refrescar la página manualmente.
 };
 
-const checkPayload = (payload,userType) => {
-    debugger;
+const checkPayload = (payload, userType) => {
     if (userType=='New'){
-        (!payload.name=='' && !payload.email=='' && !payload.address=='' && !payload.phone=='')
+        let isValid = (!payload.name=='' && !payload.email=='' && !payload.address=='' && !payload.phone=='')
         ? true
         : false;
+        return isValid;
     } else if(userType=='Edit'){
-        (!payload.id=='' && !payload.name=='' && !payload.email=='' && !payload.address=='' && !payload.phone=='')
+        let isValid = (!payload.id=='' && !payload.name=='' && !payload.email=='' && !payload.address=='' && !payload.phone=='')
         ? true
         : false;
+        return isValid;
     }
 };
 
@@ -192,7 +192,6 @@ const modalChange = (id) => {
 };
 
 const editUser = (userId) => {
-    debugger;
     event.preventDefault();
     const formName = document.getElementById('name');
     const formEmail = document.getElementById('email');
