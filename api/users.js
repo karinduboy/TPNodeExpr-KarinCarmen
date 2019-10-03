@@ -28,7 +28,7 @@ const searchByQuery = (req,res,next) => {
     console.log(query)
     let searchedUsers = (users, query) => { users.filter(user => user.values(users).some( value => user[value].includes(query)))};
     if (searchedUsers) {
-    res.json({searchedUsers});
+        res.json(searchedUsers);
     } else {
         res.status('404').json(`No encontramos ningún usuario con ${query}`)
     };

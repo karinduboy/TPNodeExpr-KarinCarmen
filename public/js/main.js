@@ -139,7 +139,7 @@ const searchByQuery= () =>{
         fetch(`/api/users/${query}`)
         .then((res) => res.json())
         .then(res=> console.log(res))
-    }  
+    };
 }
 
 const clean = () =>{
