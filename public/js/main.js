@@ -133,13 +133,12 @@ const checkPayload = (payload, userType) => {
     }
 };
 
-
 const searchByQuery= () =>{
     if ( event.keyCode===13){
         let query = document.getElementById("search").value;
         fetch(`/api/users/${query}`)
         .then((res) => res.json())
-        .then(res=> console.log(res))  
+        .then(res=> console.log(res))
     }  
 }
 
@@ -148,27 +147,6 @@ const clean = () =>{
     tbody.innerHTML = ''
 }
 
-const patchExample = (id, payload) => {
-    fetch(`api/users/${id}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-    })
-        .then((res) => res.json())
-        .then((res) => {
-            console.log(res);
-            formName.value = '';
-            formEmail.value = '';
-            formAddress.value = '';
-            formPhone.value = '';
-            initialize();
-        })
-        .catch((error) => {
-             //acá van otras cositas
-        });
-};
 // datos del modal
 const modalChange = (id) => {
     let userId = id;
