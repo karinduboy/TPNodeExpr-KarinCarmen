@@ -12,8 +12,8 @@ router.get('/', (req,res) =>{
 
 
 //APIS
-router.get('/api/users', users.getUsers);
 router.get('/api/users/:id', users.getUserById);
+router.get('/api/users', users.getUsers);
 router.get('/api/users/:query', users.searchByQuery);
 router.post('/api/users', users.postUser);
 router.patch('/api/users', users.patchUser);

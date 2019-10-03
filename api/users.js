@@ -22,6 +22,7 @@ const postUser = (req, res, next) => {
 	}
 	next();
 };
+
 const searchByQuery = (req,res,next) => {
     let query = req.params.query;
     console.log(query)
@@ -38,24 +39,27 @@ const searchByQuery = (req,res,next) => {
 
 
 const getUserById = (req, res, next) => {
-	let resUser = users.find((e) => e.id === req.params.id);
-	if (resUser) {
+    let idToSearch = req.params.id
+	let resUser = users.find((e) => e.id === idToSearch);
+    // console.log(idToSearch,resUser)
+    if (resUser) {
 		res.json(resUser);
 	} else {
-		res.status(404).send('no encontramos al usuario');
-    }
+		res.status('404').send('no encontramos al usuario');
+    };
     next();
 };
 
 
 const patchUser = (req,res,next) => {
+    debugger;
     let newUser = req.body;
-    let oldUser = users.find(e=> e,id === req.body.id);
-    let index = users.findIndex(e => e.id === req.body.id)
-    let editUser = {...oldUser,...newUser};
+    let oldUser = users.find(e => e.id === req.body.id);
+    let index = users.findIndex(e => e.id === req.body.id);
+    let editedUser = {...oldUser,...newUser};
     users.splice(index, 1);
-    users.push(editUser);
-    res.json(`Se edito con exito el usuario con el id ${req.params.id}`)
+    users.push(editedUser);
+    res.send(`Se edito con exito el usuario con el id ${req.params.id}`)
     next();
 }
 
@@ -63,7 +67,6 @@ const deleteUser = (req, res, next) =>{
     let indexUser = users.findIndex(e=>e.id === req.params.id)
     users.splice(indexUser, 1)
     res.json(`Se elimino con exito el usuario con el id ${req.params.id}`);
-   
     next();
 }
 

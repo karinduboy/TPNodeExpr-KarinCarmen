@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Users Management</title>
-    <script src="js/main.js" type="text/javascript"></script>
     <script src="js/validations.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 </head>
@@ -17,7 +17,7 @@
     <div id="container" class="container">
             <header class="headerTable">
                 <h2>REGISTRO DE USUARIOS</h2>
-                <a href="#"onclick="openModal()" class="button" id="buttonAdd"><span class="more">+</span>NUEVO USUARIO</a>
+                <a href="#"onclick="openModal('Create')" class="button" id="buttonAdd"><span class="more">+</span>NUEVO USUARIO</a>
             </header>
             <div class="searchFather">
                 <input type="search" placeholder= "Buscar..." id="search" class="search" onkeypress="searchByQuery()">
@@ -40,7 +40,7 @@
             </div>
         </div>
             <div id="modalWrapper" class="modalWrapper" onclick="">
-                <div id= "modalContainer" class="modal">
+                <!-- <div id= "modalContainer" class="modal">
                     <div class="title">
                         <h2 id="title">Agregar Usuario</h2>
                         <a href="#"id="close"class="close"onclick="closeModal()">x</a>
@@ -69,11 +69,11 @@
                             </div>
                             <div class="contentBtn">
                                 <input type="submit" id="btn-add" value="Agregar"class="btnModal" onclick="createUser()">
-                                <input type="button" id="btn-cancel" value="Cancelar"class="btnModal">
+                                <input type="button" id="btn-cancel" value="Cancelar"class="btnModal" onclick="closeModal()">
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- /* esto hay que hacerlo dinámico*/ -->
                 <div id="deleteFather" class="modalWrapper">
