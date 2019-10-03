@@ -20,7 +20,7 @@
                 <a href="#"onclick="openModal('Create')" class="button" id="buttonAdd"><span class="more">+</span>NUEVO USUARIO</a>
             </header>
             <div class="searchFather">
-                <input type="search" placeholder= "Buscar..." id="search" class="search" onkeypress="searchByQuery()">
+                <input type="search" placeholder= "Buscar por nombre..." id="search" class="search" onkeypress="searchByname()">
             </div>
             <div class="tableContainer">
                 <table class="table">
@@ -40,42 +40,8 @@
             </div>
         </div>
             <div id="modalWrapper" class="modalWrapper" onclick="">
-                <!-- <div id= "modalContainer" class="modal">
-                    <div class="title">
-                        <h2 id="title">Agregar Usuario</h2>
-                        <a href="#"id="close"class="close"onclick="closeModal()">x</a>
-                    </div>
-                    <div class="formContainer">
-                        <form action="#" id="userDataForm">
-                            <div class="inputGroup">
-                                <label class="label" for="name">Nombre:</label>
-                                <input type="text" id="name" placeholder="Nombre..." class="valid" onblur="checkInputLength(this,2,30)" onkeyup="checkInputLength(this,2,30)">
-                                <div id="nameError">El nombre debe tener entre 2 y 30 caracteres</div>
-                            </div>
-                            <div class="inputGroup">
-                                <label class="label" for="email">Email:</label>
-                                <input type="email" id="email" placeholder="Email..." required onblur="checkEmail(this)" onkeyup="checkEmail(this)">
-                                <div id="emailError">email inválido</div>
-                            </div>
-                            <div class="inputGroup">
-                                <label class="label" for="address">Dirección:</label>
-                                <input type="address" id="address" placeholder="Dirección..." required onblur="checkInputLength(this,2,30)" onkeyup="checkInputLength(this,2,30)">
-                                <div id="addressError">La dirección debe tener entre 2 y 30 caracteres</div>
-                            </div>
-                            <div class="inputGroup">
-                                <label class="label" for="phone">Phone:</label>
-                                <input type="number" id="phone" placeholder="Teléfono..." required onblur="checkPhone(this)" onkeyup="checkPhone(this)">
-                                <div id="phoneError">Solo puedes introducir números</div>
-                            </div>
-                            <div class="contentBtn">
-                                <input type="submit" id="btn-add" value="Agregar"class="btnModal" onclick="createUser()">
-                                <input type="button" id="btn-cancel" value="Cancelar"class="btnModal" onclick="closeModal()">
-                            </div>
-                        </form>
-                    </div>
-                </div> -->
+                
             </div>
-            <!-- /* esto hay que hacerlo dinámico*/ -->
                 <div id="deleteFather" class="modalWrapper">
                 <div id="modalDelete" class="modalDelete">
                     <div class="title">

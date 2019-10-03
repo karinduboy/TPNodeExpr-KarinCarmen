@@ -133,13 +133,15 @@ const checkPayload = (payload, userType) => {
     }
 };
 
-const searchByQuery= () =>{
+const searchByname= () =>{
     if ( event.keyCode===13){
-        let query = document.getElementById("search").value;
-        fetch(`/api/users/${query}`)
+        let name = document.getElementById("search").value;
+        fetch(`/api/users/search/${name}`)
         .then((res) => res.json())
-        .then(res=> console.log(res))
+        .then(data=> printUsers(data));
+    
     };
+
 }
 
 const clean = () =>{
@@ -195,48 +197,7 @@ const editUser = (userId) => {
     closeModal();
     location.reload();
 }
-    // openModal();
-    // const userInfo  = {
-    //     name: formName.value,
-    //     email: formEmail.value,
-    //     address: formAddress.value,
-    //     phone: formPhone.value
-    // };
-    // fetch(`api/users/${id}`, {
-    //     method: 'PATCH',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(userInfo)
-    // })
-    //     .then((res) => res.json())
-    //     .then((res) => {
-    //         formName.value = res.name;
-    //         formEmail.value = res.email;
-    //         formAddress.value = res.address;
-    //         formPhone.value = res.phone;
-    //     })
-    //     .catch((error) => {
-    //          //acá van otras cositas
-    //     });
     
-    // console.log(modal);
-    
-    
-// const modalValues = () => {	
-//     const name = document.getElementById('name');	
-//     const email = document.getElementById('email');	
-//     const adress = document.getElementById('adress');	
-//     const phone = document.getElementById('phone');	
-//     let info = {	
-//         'name': name.value,	
-//         'email': email.value,	
-//         'adress': adress.value,	
-//         'phone': phone.value	
-//     };	
-//     console.log(info);
-// }
-
 const openModalDelete = (id)=>{
     const mask = document.getElementById('deleteFather');
     mask.style.display='block';

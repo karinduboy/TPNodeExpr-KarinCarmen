@@ -23,25 +23,23 @@ const postUser = (req, res, next) => {
 	next();
 };
 
-const searchByQuery = (req,res,next) => {
-    let query = req.params.query;
-    console.log(query)
-    let searchedUsers = (users, query) => { users.filter(user => user.values(users).some( value => user[value].includes(query)))};
-    if (searchedUsers) {
-        res.json(searchedUsers);
+const searchByname = (req,res,next) => {
+    let name = req.params.name.toUpperCase();
+    let result = users.filter(user => user.name.toUpperCase().includes(name))
+    if (result.length != 0) {
+        res.json(result);
     } else {
-        res.status('404').json(`No encontramos ningún usuario con ${query}`)
+        res.status('404').json(`No encontramos ningún usuario con el nombre ${name}`)
+        
     };
     next();
 }
 
 
 
-
 const getUserById = (req, res, next) => {
     let idToSearch = req.params.id
 	let resUser = users.find((e) => e.id === idToSearch);
-    // console.log(idToSearch,resUser)
     if (resUser) {
 		res.json(resUser);
 	} else {
@@ -71,4 +69,4 @@ const deleteUser = (req, res, next) =>{
 
 
 
-module.exports = { getUsers, postUser, searchByQuery, getUserById, patchUser, deleteUser };
+module.exports = { getUsers, postUser, getUserById, patchUser, deleteUser, searchByname };

@@ -2,7 +2,7 @@
 
 //variables
 $tbBorder:rgb(140, 168, 167);
-$tbHeaderBg: rgb(3, 63, 48);
+$tbHeaderBg:rgb(70, 139, 105);
 $actIcon: rgb(50, 158, 17);
 $actIconHover: rgb(3, 44, 42);
 $btnBgHover: rgb(80, 206, 42);
@@ -52,7 +52,8 @@ body{
     flex-direction: column;
     width: 100%;
     margin-top: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
     color:$fontColor;
     @media only screen and (max-width : 290px){
         
@@ -76,11 +77,11 @@ body{
                
                      h2{
                         @include row;
-                        color:$h2Bg;
+                        color:$tbBg;
                         width: 60%;
                         padding: 24px;
                         font-size: 28px;
-                        font-style: italic;
+                        font-weight: bold;
                         @media only screen and (max-width : 700px){
                             font-size: 22px;
                             padding-bottom: 8px;
@@ -97,11 +98,11 @@ body{
                         justify-content: center;
                         align-items: center;
                         width: 25%;
-                        background-color: $btnBg;
-                        color: $btnText;
+                        background-color:$actIcon;
+                        color: $h2Bg;
                         height: 48px;
                         margin: 16px 5%;
-                        font-weight: 400;
+                        font-family: cursive;
                         @media only screen and (max-width : 700px){
                             font-size: 14px;
                             padding-right: 8px;
@@ -123,7 +124,7 @@ body{
                         .more{
                             margin: 8px;
                             border-radius: 50%; 
-                            background-color:$btnText;
+                            background-color:$h2Bg;
                             color:$btnBg;
                             padding: 0 4px;
                             font-weight: bold;
@@ -139,13 +140,14 @@ body{
                     width: 100%;
                     display: flex;
                     flex-direction: row-reverse;
-                    height:80px;
+                    height:60px;
+                    margin-bottom: 16px;
                     .search{
                         width: 30%;
                         margin: 16px;
                         border-radius: 20px;
                         outline: none;
-                        background-color:white;
+                        background-color:$tbBg;
                         border: 0;
                         padding: 20px;
                         @media only screen and (max-width : 520px){
@@ -159,17 +161,17 @@ body{
                     font-size: 14px;
                     border: 1px solid rgba($secondaryColor,.5);
                     border-top: $tbHeaderBg;
-                    color: #666;
+                    color: $tbHeaderBg;
                     border-collapse: collapse;
-                    background-color: #fff;
+                    background-color:$fontThBg;
                     @media only screen and (max-width : 290px){
-        
                         font-size: 12px;
                     }
                     @include center;
                     td, th {
                         padding : 8px;
                         border-bottom: 1px solid rgba($secondaryColor,.5);
+                        font-weight: 600;
                         a{
                          @include a;
                          &:first-of-type {
@@ -181,9 +183,8 @@ body{
                        }
                      }
                      th {
-                       background-color :$thBg;
+                       background-color:$tbHeaderBg;
                        color: $fontThBg;
-                       font-weight : normal;
                        text-align : center;
                     }
                     td {
