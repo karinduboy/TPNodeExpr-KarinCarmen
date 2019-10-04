@@ -10,15 +10,13 @@ router.get('/', (req,res) =>{
     res.sendFile(path.join(__dirname, '../pages/index.html'));
 });
 
-
 //APIS
 router.get('/api/users/:id', users.getUserById);
 router.get('/api/users', users.getUsers);
-router.get('/api/users/:query', users.searchByQuery);
+// router.get('/api/users/:query', users.searchByQuery);
 router.post('/api/users', users.postUser);
 router.patch('/api/users', users.patchUser);
 router.delete('/api/users/:id', users.deleteUser);
-
 
 //ERRORS
 router.use((req,res)=>{

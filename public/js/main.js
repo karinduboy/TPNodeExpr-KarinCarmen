@@ -133,12 +133,16 @@ const checkPayload = (payload, userType) => {
     }
 };
 
-const searchByQuery= () =>{
+const searchByQuery = () =>{
     if ( event.keyCode===13){
+        debugger;
         let query = document.getElementById("search").value;
         fetch(`/api/users/${query}`)
         .then((res) => res.json())
-        .then(res=> console.log(res))
+        .then((res) => searchedUsers = res)
+            .then (
+                printUsers(searchedUsers.users)
+            ) 
     };
 }
 

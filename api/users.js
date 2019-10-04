@@ -23,21 +23,6 @@ const postUser = (req, res, next) => {
 	next();
 };
 
-const searchByQuery = (req,res,next) => {
-    let query = req.params.query;
-    console.log(query)
-    let searchedUsers = (users, query) => { users.filter(user => user.values(users).some( value => user[value].includes(query)))};
-    if (searchedUsers) {
-        res.json(searchedUsers);
-    } else {
-        res.status('404').json(`No encontramos ningún usuario con ${query}`)
-    };
-    next();
-}
-
-
-
-
 const getUserById = (req, res, next) => {
     let idToSearch = req.params.id
 	let resUser = users.find((e) => e.id === idToSearch);
@@ -49,7 +34,6 @@ const getUserById = (req, res, next) => {
     };
     next();
 };
-
 
 const patchUser = (req,res,next) => {
     let newUser = req.body;
@@ -69,6 +53,4 @@ const deleteUser = (req, res, next) =>{
     next();
 }
 
-
-
-module.exports = { getUsers, postUser, searchByQuery, getUserById, patchUser, deleteUser };
+module.exports = { getUsers, postUser, getUserById, patchUser, deleteUser };
