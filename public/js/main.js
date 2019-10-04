@@ -133,15 +133,15 @@ const checkPayload = (payload, userType) => {
     }
 };
 
-const searchByname= () =>{
+const searchByQuery= () =>{
     if ( event.keyCode===13){
-        let name = document.getElementById("search").value;
-        fetch(`/api/users/search/${name}`)
+        let query = document.getElementById("search").value;
+        fetch(`/api/users/search/${query}`)
         .then((res) => res.json())
         .then(data=> printUsers(data));
     
     };
-
+        
 }
 
 const clean = () =>{

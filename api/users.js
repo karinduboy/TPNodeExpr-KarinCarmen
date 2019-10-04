@@ -4,6 +4,8 @@ const alphabet = '0123456789abcdef'
 const users = [
     {id: '1', name: 'Karin Duboy', email: 'karinduboy@gmail.com', address: 'nombre de calle 33344', phone:'0800235563'},
     {id: '2', name: 'Carmen Mindeguía', email:'mindeguia@hotmail.com', address: 'Otracalle 2595', phone:'48235563'},
+    {id: '3', name: 'Lazaro smith', email:'smith@hotmail.com', address: 'Sarmiento 2595', phone:'114889053'},
+    {id: '4', name: 'Veronica Blear', email:'Blear@gmail.com', address: 'Calle 13 2595', phone:'8494747490'},
 ];
 
 const getUsers = (req,res,next) => {
@@ -23,13 +25,13 @@ const postUser = (req, res, next) => {
 	next();
 };
 
-const searchByname = (req,res,next) => {
-    let name = req.params.name.toUpperCase();
-    let result = users.filter(user => user.name.toUpperCase().includes(name))
+const searchByQuery = (req,res,next) => {
+    let query = req.params.query.toUpperCase();
+    let result = users.filter(user => user.name.toUpperCase().includes(query)|| user.email.toUpperCase().includes(query)||user.address.toUpperCase().includes(query)||user.phone.toUpperCase().includes(query))
     if (result.length != 0) {
         res.json(result);
     } else {
-        res.status('404').json(`No encontramos ningún usuario con el nombre ${name}`)
+        res.status('404').json(`No encontramos ningún usuario con ${query}`)
         
     };
     next();
@@ -69,4 +71,4 @@ const deleteUser = (req, res, next) =>{
 
 
 
-module.exports = { getUsers, postUser, getUserById, patchUser, deleteUser, searchByname };
+module.exports = { getUsers, postUser, getUserById, patchUser, deleteUser, searchByQuery };
